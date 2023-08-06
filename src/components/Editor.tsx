@@ -49,16 +49,16 @@ export default function App() {
   const insertImage: ReactSlashMenuItem<typeof customSchema> = {
     name: "Insert Image",
     execute: (editor) => {
-      const src: string | null = prompt("Enter image URL");
-      const alt: string | null = prompt("Enter image alt text");
+      const src: string = "https://placekitten.com/200/300";
+      const alt: string = "kitten";
 
       editor.insertBlocks(
         [
           {
             type: "image",
             props: {
-              src: src || "https://via.placeholder.com/1000",
-              alt: alt || "image",
+              src: src,
+              alt: alt,
             },
           },
         ],
