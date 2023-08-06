@@ -2,7 +2,6 @@ import { BlockSchema, defaultBlockSchema, defaultProps } from "@blocknote/core";
 import "@blocknote/core/style.css";
 import {
   BlockNoteView,
-  InlineContent,
   ReactSlashMenuItem,
   createReactBlockSpec,
   getDefaultReactSlashMenuItems,
@@ -23,7 +22,7 @@ export default function App() {
         default: "image",
       },
     },
-    containsInlineContent: true,
+    containsInlineContent: false,
     render: ({ block }) => (
       <div id="image-wrapper">
         <img
@@ -31,7 +30,6 @@ export default function App() {
           alt={block.props.alt}
           contentEditable={false}
         />
-        <InlineContent />
       </div>
     ),
   });
